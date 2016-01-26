@@ -13,6 +13,8 @@
 		3E6A39A41C56A230009C62B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A39A31C56A230009C62B3 /* Assets.xcassets */; };
 		3E6A39A71C56A230009C62B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A39A51C56A230009C62B3 /* LaunchScreen.storyboard */; };
 		3E6A39B21C56A231009C62B3 /* Pitch_PerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A39B11C56A231009C62B3 /* Pitch_PerfectTests.swift */; };
+		3E6A39BD1C581F28009C62B3 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A39BC1C581F28009C62B3 /* PlaySoundsViewController.swift */; };
+		3E6A39BF1C582387009C62B3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A39BE1C582387009C62B3 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		3E6A39AD1C56A231009C62B3 /* Pitch PerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch PerfectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6A39B11C56A231009C62B3 /* Pitch_PerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch_PerfectTests.swift; sourceTree = "<group>"; };
 		3E6A39B31C56A231009C62B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6A39BC1C581F28009C62B3 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		3E6A39BE1C582387009C62B3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +83,11 @@
 			children = (
 				3E6A399C1C56A230009C62B3 /* AppDelegate.swift */,
 				3E6A399E1C56A230009C62B3 /* ViewController.swift */,
-				3E6A39A01C56A230009C62B3 /* Main.storyboard */,
-				3E6A39A31C56A230009C62B3 /* Assets.xcassets */,
 				3E6A39A51C56A230009C62B3 /* LaunchScreen.storyboard */,
+				3E6A39A01C56A230009C62B3 /* Main.storyboard */,
+				3E6A39BC1C581F28009C62B3 /* PlaySoundsViewController.swift */,
+				3E6A39A31C56A230009C62B3 /* Assets.xcassets */,
+				3E6A39BE1C582387009C62B3 /* Sounds */,
 				3E6A39A81C56A230009C62B3 /* Info.plist */,
 			);
 			path = "Pitch Perfect";
@@ -179,6 +185,7 @@
 			files = (
 				3E6A39A71C56A230009C62B3 /* LaunchScreen.storyboard in Resources */,
 				3E6A39A41C56A230009C62B3 /* Assets.xcassets in Resources */,
+				3E6A39BF1C582387009C62B3 /* Sounds in Resources */,
 				3E6A39A21C56A230009C62B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E6A399F1C56A230009C62B3 /* ViewController.swift in Sources */,
+				3E6A39BD1C581F28009C62B3 /* PlaySoundsViewController.swift in Sources */,
 				3E6A399D1C56A230009C62B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
