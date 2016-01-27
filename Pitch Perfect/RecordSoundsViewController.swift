@@ -27,6 +27,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        resetView()
+    }
+    
+    func resetView() {
+        recordButton.enabled = true
+        recordingLabel.text = "Tap to Record"
         stopButton.hidden = true
     }
 
@@ -34,7 +40,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         print("recordAudio")
         
         recordButton.enabled = false
-        recordingLabel.hidden = false
+        recordingLabel.text = "Recording ..."
         stopButton.hidden = false
 
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
@@ -62,8 +68,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
         else {
             print("Recording was not successful")
-            recordButton.enabled = true
-            stopButton.hidden = true
+            resetView()
         }
     }
     
@@ -77,11 +82,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func stopRecordAudio(sender: UIButton) {
-        print("stopRecordAudio")
-        recordButton.enabled = true
-        recordingLabel.hidden = true
-        stopButton.hidden = true
-        
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)

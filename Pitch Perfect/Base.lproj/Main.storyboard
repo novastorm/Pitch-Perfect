@@ -46,7 +46,7 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xrR-7n-uMf"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ7-rM-9u6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ7-rM-9u6">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.46666666666666667" green="0.76078431372549016" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,7 +87,9 @@
                             </constraint>
                             <constraint firstItem="LXG-7d-cW1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TGh-2q-yZG"/>
                             <constraint firstItem="bZ7-rM-9u6" firstAttribute="top" secondItem="Dkk-cg-R1z" secondAttribute="bottom" constant="8" id="TuK-9T-zSg"/>
-                            <constraint firstItem="bZ7-rM-9u6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1B-aO-nfl"/>
+                            <constraint firstItem="bZ7-rM-9u6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y1B-aO-nfl">
+                                <variation key="widthClass=compact" constant="1"/>
+                            </constraint>
                             <constraint firstItem="Dkk-cg-R1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n7a-mJ-lem"/>
                             <constraint firstItem="Dkk-cg-R1z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rDm-u8-hac"/>
                         </constraints>
