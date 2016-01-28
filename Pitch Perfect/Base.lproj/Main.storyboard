@@ -17,19 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkk-cg-R1z">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="microphone"/>
-                                <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xrR-7n-uMf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ7-rM-9u6">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.46666666666666667" green="0.76078431372549016" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-eG-apZ">
                                 <rect key="frame" x="97" y="465" width="188" height="128"/>
                                 <subviews>
@@ -80,26 +67,37 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkk-cg-R1z">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="microphone"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xrR-7n-uMf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ7-rM-9u6">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.76078431372549016" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bZ7-rM-9u6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WEf-D1-NXQ">
-                                <variation key="widthClass=compact" constant="1"/>
-                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dkk-cg-R1z" secondAttribute="bottom" constant="60" id="OUm-wg-quE"/>
+                            <constraint firstItem="Dkk-cg-R1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SKa-il-Pyz"/>
+                            <constraint firstItem="Dkk-cg-R1z" firstAttribute="top" secondItem="bZ7-rM-9u6" secondAttribute="bottom" constant="7.5" id="dUB-pK-e1R"/>
                             <constraint firstItem="Khb-eG-apZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dWl-lX-6JU"/>
-                            <constraint firstItem="Dkk-cg-R1z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="196" id="hp0-1k-ubY"/>
-                            <constraint firstItem="Dkk-cg-R1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ktZ-f7-W7v"/>
-                            <constraint firstItem="bZ7-rM-9u6" firstAttribute="top" secondItem="Dkk-cg-R1z" secondAttribute="bottom" constant="8" id="lij-cS-Tka"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Khb-eG-apZ" secondAttribute="bottom" constant="60" id="y8h-JK-st6"/>
+                            <constraint firstItem="bZ7-rM-9u6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="znA-IW-Gf0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="hp0-1k-ubY"/>
-                                <exclude reference="ktZ-f7-W7v"/>
-                                <exclude reference="WEf-D1-NXQ"/>
-                                <exclude reference="lij-cS-Tka"/>
-                                <exclude reference="dWl-lX-6JU"/>
+                                <exclude reference="znA-IW-Gf0"/>
+                                <exclude reference="SKa-il-Pyz"/>
+                                <exclude reference="dUB-pK-e1R"/>
+                                <exclude reference="OUm-wg-quE"/>
                                 <exclude reference="y8h-JK-st6"/>
+                                <exclude reference="dWl-lX-6JU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -108,12 +106,12 @@
                                 <include reference="bZ7-rM-9u6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="hp0-1k-ubY"/>
-                                <include reference="ktZ-f7-W7v"/>
-                                <include reference="WEf-D1-NXQ"/>
-                                <include reference="lij-cS-Tka"/>
-                                <include reference="dWl-lX-6JU"/>
+                                <include reference="znA-IW-Gf0"/>
+                                <include reference="SKa-il-Pyz"/>
+                                <include reference="dUB-pK-e1R"/>
+                                <include reference="OUm-wg-quE"/>
                                 <include reference="y8h-JK-st6"/>
+                                <include reference="dWl-lX-6JU"/>
                             </mask>
                         </variation>
                     </view>
@@ -153,8 +151,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="OMH-1b-ZXx"/>
-                                                    <constraint firstAttribute="height" constant="100" id="WvF-4O-kdp"/>
-                                                    <constraint firstAttribute="width" constant="100" id="Zkh-Ax-Y0B"/>
                                                     <constraint firstAttribute="width" constant="100" id="qkR-wc-kwS"/>
                                                 </constraints>
                                                 <state key="normal" image="slow"/>
@@ -178,20 +174,16 @@
                                                 <rect key="frame" x="140" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="QZY-vO-T27"/>
-                                                    <constraint firstAttribute="width" constant="100" id="VJn-ZD-gj2"/>
-                                                    <constraint firstAttribute="height" constant="100" id="mV5-kD-6w8"/>
                                                     <constraint firstAttribute="height" constant="100" id="scP-7B-d3M"/>
                                                 </constraints>
                                                 <state key="normal" image="fast"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="VJn-ZD-gj2"/>
                                                         <exclude reference="scP-7B-d3M"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="VJn-ZD-gj2"/>
                                                         <include reference="scP-7B-d3M"/>
                                                     </mask>
                                                 </variation>
@@ -207,8 +199,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-MX-gtp">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="8Om-UK-3nT"/>
-                                                    <constraint firstAttribute="width" constant="100" id="VFI-vt-HSm"/>
                                                     <constraint firstAttribute="width" constant="100" id="ZjY-zA-ytQ"/>
                                                     <constraint firstAttribute="height" constant="100" id="jZJ-gM-kyl"/>
                                                 </constraints>
@@ -233,20 +223,16 @@
                                                 <rect key="frame" x="140" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="B52-5j-Rd1"/>
-                                                    <constraint firstAttribute="height" constant="100" id="L19-mo-npx"/>
-                                                    <constraint firstAttribute="width" constant="100" id="abW-H6-A3X"/>
                                                     <constraint firstAttribute="width" constant="100" id="yQ1-Gw-MJ4"/>
                                                 </constraints>
                                                 <state key="normal" image="vader"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="L19-mo-npx"/>
                                                         <exclude reference="yQ1-Gw-MJ4"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="L19-mo-npx"/>
                                                         <include reference="yQ1-Gw-MJ4"/>
                                                     </mask>
                                                 </variation>
@@ -264,8 +250,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="51U-zc-A9v"/>
                                                     <constraint firstAttribute="height" constant="100" id="IPG-Kh-Sv4"/>
-                                                    <constraint firstAttribute="width" constant="100" id="Jid-gz-Lax"/>
-                                                    <constraint firstAttribute="height" constant="100" id="kVa-Bo-kFE"/>
                                                 </constraints>
                                                 <state key="normal" image="echo"/>
                                                 <variation key="default">
@@ -289,22 +273,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="2gb-Pd-WdU"/>
                                                     <constraint firstAttribute="width" constant="100" id="Hec-7V-hw0"/>
-                                                    <constraint firstAttribute="width" constant="100" id="qDk-ql-2Ks"/>
-                                                    <constraint firstAttribute="height" constant="100" id="w4o-IS-2I9"/>
                                                 </constraints>
                                                 <state key="normal" image="reverb"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="qDk-ql-2Ks"/>
-                                                        <exclude reference="w4o-IS-2I9"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="qDk-ql-2Ks"/>
-                                                        <include reference="w4o-IS-2I9"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playReverbAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="NZS-fV-dMK"/>
                                                 </connections>

@@ -49,7 +49,6 @@ class PlaySoundsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
     @IBAction func playSlowAudio(sender: UIButton) {
         playAudioEffects(rate:0.5)
@@ -76,10 +75,12 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func stopAudio(sender: UIButton) {
-        stopAllAudio()
+        stopAudio()
     }
 
-    func stopAllAudio() {
+    func stopAudio() {
+        audioEngine.stop()
+        audioEngine.reset()
         audioPlayerNode.stop()
     }
     
