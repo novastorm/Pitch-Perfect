@@ -16,7 +16,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var recordControls: UIStackView!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func resetView() {
         recordButton.enabled = true
         recordingLabel.text = "Tap to Record"
-        stopButton.hidden = true
+//        stopButton.hidden = true
     }
 
     @IBAction func recordAudio(sender: UIButton) {
@@ -41,7 +43,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         recordButton.enabled = false
         recordingLabel.text = "Recording ..."
-        stopButton.hidden = false
+//        stopButton.hidden = false
+        recordControls.hidden = false
 
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
