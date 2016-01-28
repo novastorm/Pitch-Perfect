@@ -13,6 +13,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     var audioRecorder: AVAudioRecorder!
     var recordedAudio: RecordedAudio!
+    var audioSession: AVAudioSession!
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
@@ -22,6 +23,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setCategory(AVAudioSessionCategoryRecord)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +56,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
         print(filePath)
         
-        let session = AVAudioSession.sharedInstance()
-        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+//        let session = AVAudioSession.sharedInstance()
+//        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         
         try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
         audioRecorder.delegate = self
@@ -105,8 +109,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecordAudio(sender: UIButton) {
         audioRecorder.stop()
-        let audioSession = AVAudioSession.sharedInstance()
+//        let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+//        try! audioSession.setCategory(AVAudioSessionCategoryPlayback)
+
     }
     
 }

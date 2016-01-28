@@ -14,6 +14,7 @@ class PlaySoundsViewController: UIViewController {
     var receivedAudio: RecordedAudio!
     var audioFile: AVAudioFile!
 
+    var audioSession: AVAudioSession!
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     
@@ -24,6 +25,7 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        audioSession = AVAudioSession.sharedInstance()
         audioEngine = AVAudioEngine()
         
         audioPlayerNode = AVAudioPlayerNode()
@@ -71,7 +73,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playReverbAudio(sender: UIButton) {
-        playAudioEffects(reverbMix:50, preset: .Cathedral)
+        playAudioEffects(reverbMix:80, preset: .Cathedral)
     }
     
     @IBAction func stopAudio(sender: UIButton) {
@@ -84,7 +86,11 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.stop()
     }
     
-    func playAudioEffects(rate rate: Float = 1.0, pitch: Float = 0.0, echoDelay: Float = 0.0, echoFeedBack: Float = 50, reverbMix: Float = 0.0, preset: AVAudioUnitReverbPreset = .MediumHall) {
+    func playAudioEffects(rate rate: Float = 1.0, pitch: Float = 0.0,
+        echoDelay: Float = 0.0, echoFeedBack: Float = 50,
+        reverbMix: Float = 0.0, preset: AVAudioUnitReverbPreset = .MediumHall) {
+
+        try! audioSession.setCategory(AVAudioSessionCategoryPlayback)
         audioEngine.stop()
         audioEngine.reset()
         
@@ -95,7 +101,6 @@ class PlaySoundsViewController: UIViewController {
         self.echo.delayTime = NSTimeInterval(echoDelay)
         self.echo.feedback = echoFeedBack
         
-    
         audioPlayerNode.stop()
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
