@@ -18,7 +18,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordControls: UIStackView!
     @IBOutlet weak var stopButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var pauseResumeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
+    }
+
+    @IBAction func pauseRecordAudio(sender: UIButton) {
+        audioRecorder.pause()
+        recordingLabel.text = "Paused ..."
+        
+        pauseResumeButton.setImage(UIImage(named: "resume"), forState: .Normal)
+        pauseResumeButton.removeTarget(self, action: "pauseRecordAudio:", forControlEvents: .TouchUpInside)
+        pauseResumeButton.addTarget(self, action: "resumeRecordAudio:", forControlEvents: .TouchUpInside)
+    }
+    
+    @IBAction func resumeRecordAudio(sender: UIButton) {
+        audioRecorder.record()
+        recordingLabel.text = "Recording ..."
+        
+        pauseResumeButton.setImage(UIImage(named: "pause"), forState: .Normal)
+        pauseResumeButton.removeTarget(self, action: "resumeRecordAudio:", forControlEvents: .TouchUpInside)
+        pauseResumeButton.addTarget(self, action: "pauseRecordAudio:", forControlEvents: .TouchUpInside)
     }
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {

@@ -20,7 +20,7 @@
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-eG-apZ">
                                 <rect key="frame" x="97" y="465" width="188" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oK6-bm-3zU" userLabel="Pause Button">
+                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oK6-bm-3zU" userLabel="Pause Resume Button">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="9Yb-VW-EKK">
@@ -29,6 +29,7 @@
                                             <constraint firstAttribute="width" constant="50" id="H3u-Li-5Ld"/>
                                         </constraints>
                                         <state key="normal" image="pause"/>
+                                        <state key="selected" image="resume"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="9Yb-VW-EKK"/>
@@ -41,6 +42,9 @@
                                                 <include reference="H3u-Li-5Ld"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="pauseRecordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSI-vj-0aF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-7d-cW1">
                                         <rect key="frame" x="138" y="0.0" width="50" height="128"/>
@@ -117,7 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="5FS-LQ-exq"/>
                     <connections>
-                        <outlet property="pauseButton" destination="oK6-bm-3zU" id="j6j-cA-rZ3"/>
+                        <outlet property="pauseResumeButton" destination="oK6-bm-3zU" id="9wc-Bj-dKi"/>
                         <outlet property="recordButton" destination="Dkk-cg-R1z" id="9UU-YG-aVi"/>
                         <outlet property="recordControls" destination="Khb-eG-apZ" id="ICA-20-WRw"/>
                         <outlet property="recordingLabel" destination="bZ7-rM-9u6" id="4On-5l-0Ym"/>
@@ -329,6 +333,7 @@
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="80" height="80"/>
         <image name="pause" width="128" height="128"/>
+        <image name="resume" width="128" height="128"/>
         <image name="reverb" width="64" height="64"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
