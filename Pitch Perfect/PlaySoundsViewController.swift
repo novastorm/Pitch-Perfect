@@ -14,7 +14,6 @@ class PlaySoundsViewController: UIViewController {
     var receivedAudio: RecordedAudio!
     var audioFile: AVAudioFile!
 
-    var audioSession: AVAudioSession!
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     
@@ -25,7 +24,6 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        audioSession = AVAudioSession.sharedInstance()
         audioEngine = AVAudioEngine()
         
         audioPlayerNode = AVAudioPlayerNode()
@@ -90,7 +88,6 @@ class PlaySoundsViewController: UIViewController {
         echoDelay: Float = 0.0, echoFeedBack: Float = 50,
         reverbMix: Float = 0.0, preset: AVAudioUnitReverbPreset = .MediumHall) {
 
-        try! audioSession.setCategory(AVAudioSessionCategoryPlayback)
         audioEngine.stop()
         audioEngine.reset()
         
