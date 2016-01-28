@@ -96,12 +96,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="znA-IW-Gf0"/>
                                 <exclude reference="SKa-il-Pyz"/>
                                 <exclude reference="dUB-pK-e1R"/>
+                                <exclude reference="znA-IW-Gf0"/>
+                                <exclude reference="dWl-lX-6JU"/>
                                 <exclude reference="OUm-wg-quE"/>
                                 <exclude reference="y8h-JK-st6"/>
-                                <exclude reference="dWl-lX-6JU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -110,12 +110,12 @@
                                 <include reference="bZ7-rM-9u6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="znA-IW-Gf0"/>
                                 <include reference="SKa-il-Pyz"/>
                                 <include reference="dUB-pK-e1R"/>
+                                <include reference="znA-IW-Gf0"/>
+                                <include reference="dWl-lX-6JU"/>
                                 <include reference="OUm-wg-quE"/>
                                 <include reference="y8h-JK-st6"/>
-                                <include reference="dWl-lX-6JU"/>
                             </mask>
                         </variation>
                     </view>
@@ -246,11 +246,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iWG-uT-lRf">
-                                        <rect key="frame" x="0.0" y="260" width="240" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iWG-uT-lRf">
+                                        <rect key="frame" x="18" y="260" width="204" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-zA-Pmr">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-zA-Pmr">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="51U-zc-A9v"/>
                                                     <constraint firstAttribute="height" constant="100" id="IPG-Kh-Sv4"/>
@@ -262,7 +262,8 @@
                                                         <exclude reference="IPG-Kh-Sv4"/>
                                                     </mask>
                                                 </variation>
-                                                <variation key="widthClass=compact">
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <mask key="constraints">
                                                         <include reference="51U-zc-A9v"/>
                                                         <include reference="IPG-Kh-Sv4"/>
@@ -272,18 +273,24 @@
                                                     <action selector="playEchoAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="c7A-0I-4tr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-iN-WlY">
-                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-iN-WlY">
+                                                <rect key="frame" x="104" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="2gb-Pd-WdU"/>
                                                     <constraint firstAttribute="width" constant="100" id="Hec-7V-hw0"/>
                                                 </constraints>
                                                 <state key="normal" image="reverb"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="playReverbAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="NZS-fV-dMK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="260" width="240" height="100"/>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                             </stackView>

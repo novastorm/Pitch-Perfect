@@ -66,6 +66,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.pause()
         recordingLabel.text = "Paused ..."
         
+        // Change to resume button
         pauseResumeButton.setImage(UIImage(named: "resume"), forState: .Normal)
         pauseResumeButton.removeTarget(self, action: "pauseRecordAudio:", forControlEvents: .TouchUpInside)
         pauseResumeButton.addTarget(self, action: "resumeRecordAudio:", forControlEvents: .TouchUpInside)
@@ -75,6 +76,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
         recordingLabel.text = "Recording ..."
         
+        // Change to pause button
         pauseResumeButton.setImage(UIImage(named: "pause"), forState: .Normal)
         pauseResumeButton.removeTarget(self, action: "resumeRecordAudio:", forControlEvents: .TouchUpInside)
         pauseResumeButton.addTarget(self, action: "pauseRecordAudio:", forControlEvents: .TouchUpInside)
