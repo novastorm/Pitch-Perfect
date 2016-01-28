@@ -2,6 +2,11 @@
 
 Have fun disguising your voice with Pitch Perfect! This app records your voice and plays it back with various sound effects such as chipmunk or dark villian. You can even speed up or slowdown too!
 
+Items learned:
+
+* Audio Effects using AVFoundation
+* Auto Layout
+
 ***
 
 Project specifications provided by Udacity course [Intro to iOS App Development with Swift](https://www.udacity.com/courses/ud585)
