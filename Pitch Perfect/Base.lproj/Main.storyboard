@@ -110,18 +110,6 @@
                                                     <constraint firstAttribute="width" constant="100" id="qkR-wc-kwS"/>
                                                 </constraints>
                                                 <state key="normal" image="slow"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="OMH-1b-ZXx"/>
-                                                        <exclude reference="qkR-wc-kwS"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="OMH-1b-ZXx"/>
-                                                        <include reference="qkR-wc-kwS"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playSlowAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="Qe7-Vo-vHZ"/>
                                                 </connections>
@@ -133,16 +121,6 @@
                                                     <constraint firstAttribute="height" constant="100" id="scP-7B-d3M"/>
                                                 </constraints>
                                                 <state key="normal" image="fast"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="scP-7B-d3M"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="scP-7B-d3M"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playFastAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="eKv-CH-qCC"/>
                                                 </connections>
@@ -159,18 +137,6 @@
                                                     <constraint firstAttribute="height" constant="100" id="jZJ-gM-kyl"/>
                                                 </constraints>
                                                 <state key="normal" image="chipmunk"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="ZjY-zA-ytQ"/>
-                                                        <exclude reference="jZJ-gM-kyl"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="ZjY-zA-ytQ"/>
-                                                        <include reference="jZJ-gM-kyl"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playChipmunkAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="OPX-Et-ciQ"/>
                                                 </connections>
@@ -182,50 +148,28 @@
                                                     <constraint firstAttribute="width" constant="100" id="yQ1-Gw-MJ4"/>
                                                 </constraints>
                                                 <state key="normal" image="vader"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="yQ1-Gw-MJ4"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="yQ1-Gw-MJ4"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playVaderAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="jhs-yf-aix"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iWG-uT-lRf">
-                                        <rect key="frame" x="10" y="260" width="220" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="iWG-uT-lRf">
+                                        <rect key="frame" x="0.0" y="260" width="240" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-zA-Pmr">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-zA-Pmr">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="51U-zc-A9v"/>
                                                     <constraint firstAttribute="height" constant="100" id="IPG-Kh-Sv4"/>
                                                 </constraints>
                                                 <state key="normal" image="echo"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="51U-zc-A9v"/>
-                                                        <exclude reference="IPG-Kh-Sv4"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="51U-zc-A9v"/>
-                                                        <include reference="IPG-Kh-Sv4"/>
-                                                    </mask>
-                                                </variation>
                                                 <connections>
                                                     <action selector="playEchoAudio:" destination="ddX-5k-xED" eventType="touchUpInside" id="c7A-0I-4tr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-iN-WlY">
-                                                <rect key="frame" x="120" y="0.0" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-iN-WlY">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="2gb-Pd-WdU"/>
                                                     <constraint firstAttribute="width" constant="100" id="Hec-7V-hw0"/>
