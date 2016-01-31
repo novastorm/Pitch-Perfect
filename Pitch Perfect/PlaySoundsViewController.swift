@@ -88,17 +88,14 @@ class PlaySoundsViewController: UIViewController {
         echoDelay: Float = 0.0, echoFeedBack: Float = 50,
         reverbMix: Float = 0.0, preset: AVAudioUnitReverbPreset = .MediumHall) {
 
-        audioEngine.stop()
-        audioEngine.reset()
-        
+        stopAudio()
+            
         self.pitch.rate = rate
         self.pitch.pitch = pitch
         self.reverb.loadFactoryPreset(preset)
         self.reverb.wetDryMix = reverbMix
         self.echo.delayTime = NSTimeInterval(echoDelay)
         self.echo.feedback = echoFeedBack
-        
-        audioPlayerNode.stop()
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
