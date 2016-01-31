@@ -41,7 +41,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        hideRecordAudioButton()
+        showRecordAudioButton(show: false, text: "Recording ...")
 
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
@@ -62,14 +62,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.pause()
         recordingLabel.text = "Paused ..."
         
-        showResumeRecordAudioButton()
+        showPauseResumeAudioButton(image: "resume", currentAction: "pauseRecordAudio:", newAction: "resumeRecordAudio:")
     }
     
     @IBAction func resumeRecordAudio(sender: UIButton) {
         audioRecorder.record()
         recordingLabel.text = "Recording ..."
         
-        showPauseRecordAudioButton()
+        showPauseResumeAudioButton(image: "pause", currentAction: "resumeRecordAudio:", newAction: "pauseRecordAudio:")
     }
     
     @IBAction func stopRecordAudio(sender: UIButton) {
@@ -78,41 +78,21 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func resetView() {
-        showRecordAudioButton()
-        showPauseRecordAudioButton()
+        showRecordAudioButton(text: "Tap to Record")
+        showPauseResumeAudioButton(image: "pause", currentAction: "resumeRecordAudio:", newAction: "pauseRecordAudio:")
     }
     
-    func showRecordAudioButton() {
-        recordButton.hidden = false
-        recordingLabel.text = "Tap to Record"
-        recordControls.hidden = true
-    }
-
-    func hideRecordAudioButton() {
-        recordButton.hidden = true
-        recordingLabel.text = "Recording ..."
-        recordControls.hidden = false
+    func showRecordAudioButton(show show: Bool = true, text: String) {
+        recordButton.hidden = !show
+        recordingLabel.text = text
+        recordControls.hidden = show
     }
     
-    func showPauseRecordAudioButton() {
-        
-        let imageName = "pause"
-        let currentAction: Selector = "resumeRecordAudio:"
-        let newAction: Selector = "pauseRecordAudio:"
-
+    func showPauseResumeAudioButton(image imageName: String, currentAction: Selector, newAction: Selector!) {
         pauseResumeButton.setImage(UIImage(named: imageName), forState: .Normal)
         pauseResumeButton.removeTarget(self, action: currentAction, forControlEvents: .TouchUpInside)
         pauseResumeButton.addTarget(self, action: newAction, forControlEvents: .TouchUpInside)
-    }
-    
-    func showResumeRecordAudioButton() {
-        let imageName = "resume"
-        let currentAction: Selector = "pauseRecordAudio:"
-        let newAction: Selector = "resumeRecordAudio:"
         
-        pauseResumeButton.setImage(UIImage(named: imageName), forState: .Normal)
-        pauseResumeButton.removeTarget(self, action: currentAction, forControlEvents: .TouchUpInside)
-        pauseResumeButton.addTarget(self, action: newAction, forControlEvents: .TouchUpInside)
     }
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
