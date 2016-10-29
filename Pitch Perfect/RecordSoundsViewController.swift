@@ -62,7 +62,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.pause()
         recordingLabel.text = "Paused ..."
         
-        showPauseResumeAudioButton(image: "resume", currentAction: "pauseRecordAudio:", newAction: "resumeRecordAudio:")
+        showPauseResumeAudioButton(image: "resume", currentAction: "pauseRecordAudio:", newAction: #selector(RecordSoundsViewController.resumeRecordAudio(_:)))
     }
     
     @IBAction func resumeRecordAudio(sender: UIButton) {
